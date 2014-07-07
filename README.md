@@ -1,6 +1,6 @@
 A Simple MassTransit Publish/Subscribe Example
 ==============================================
 
-This is the example code to go with a new blog post I am writing. I will link to the blog post here when it is online.
+This is the example code to go with a [blog post on LooselyCoupledLabs.com](http://looselycoupledlabs.com/2014/06/masstransit-publish-subscribe-example/).
 
 David
