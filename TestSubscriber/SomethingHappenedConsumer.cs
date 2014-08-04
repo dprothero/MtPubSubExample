@@ -1,6 +1,7 @@
 ﻿using Contracts;
 using MassTransit;
 using System;
+using System.Threading;
 
 namespace TestSubscriber
 {
@@ -8,10 +9,13 @@ namespace TestSubscriber
   {
     public void Consume(IConsumeContext<SomethingHappened> message)
     {
-      Console.Write("TXT: " + message.Message.What);
-      Console.Write("  SENT: " + message.Message.When.ToString());
-      Console.Write("  PROCESSED: " + DateTime.Now.ToString());
-      Console.WriteLine(" (" + System.Threading.Thread.CurrentThread.ManagedThreadId.ToString() + ")");
+      Console.WriteLine("TXT: " + message.Message.What +
+                        "  SENT: " + message.Message.When.ToString() +
+                        "  PROCESSED: " + DateTime.Now.ToString() + 
+                        " (" + System.Threading.Thread.CurrentThread.ManagedThreadId.ToString() + ")");
+
+      // Simulate processing time
+      Thread.Sleep(250);
     }
   }
 }

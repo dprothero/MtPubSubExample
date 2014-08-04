@@ -20,13 +20,13 @@ namespace TestPublisher
         int numMessages = 0;
         if (int.TryParse(text, out numMessages) && numMessages > 0)
         {
-          Parallel.For(1, numMessages, i =>
+          Parallel.For(0, numMessages, i =>
           {
             var message = new SomethingHappenedMessage() { What = "message " + i.ToString(), When = DateTime.Now };
             bus.Publish<SomethingHappened>(message, x => { x.SetDeliveryMode(MassTransit.DeliveryMode.Persistent); });
           });
         }
-        else
+        else if(text != "quit")
         {
           Console.WriteLine("\"" + text + "\" is not a number.");
         }
