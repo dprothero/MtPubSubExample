@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD366E76-3C4F-49C9-AA03-36FE23580E37}</ProjectGuid>
+    <ProjectGuid>{627AFC13-0DBD-40D3-9289-479A2FA914F7}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestPublisher</RootNamespace>
@@ -34,14 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Magnum">
-      <HintPath>..\packages\Magnum.2.1.2\lib\NET40\Magnum.dll</HintPath>
-    </Reference>
     <Reference Include="MassTransit">
-      <HintPath>..\packages\MassTransit.2.9.5\lib\net40\MassTransit.dll</HintPath>
+      <HintPath>..\packages\MassTransit.3.0.10-beta\lib\net45\MassTransit.dll</HintPath>
+    </Reference>
+    <Reference Include="NewId">
+      <HintPath>..\packages\NewId.2.1.3\lib\net45\NewId.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,11 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Configuration\Configuration.csproj">
-      <Project>{68bad11f-9680-419f-9567-91728ccdaead}</Project>
+      <Project>{2bf2f7e3-0a1f-429e-85aa-7e2a63609bfc}</Project>
       <Name>Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\Contracts\Contracts.csproj">
-      <Project>{c3d28c73-4db9-430a-8673-93b97c664915}</Project>
+      <Project>{180bfa82-49fc-43e6-9fa1-eb99df42ed9f}</Project>
       <Name>Contracts</Name>
     </ProjectReference>
   </ItemGroup>

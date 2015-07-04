@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68BAD11F-9680-419F-9567-91728CCDAEAD}</ProjectGuid>
+    <ProjectGuid>{2BF2F7E3-0A1F-429E-85AA-7E2A63609BFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Configuration</RootNamespace>
@@ -35,23 +35,23 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Magnum">
-      <HintPath>..\packages\Magnum.2.1.2\lib\NET40\Magnum.dll</HintPath>
-    </Reference>
     <Reference Include="MassTransit">
-      <HintPath>..\packages\MassTransit.2.9.5\lib\net40\MassTransit.dll</HintPath>
+      <HintPath>..\packages\MassTransit.3.0.10-beta\lib\net45\MassTransit.dll</HintPath>
     </Reference>
     <Reference Include="MassTransit.Log4NetIntegration">
-      <HintPath>..\packages\MassTransit.Log4Net.2.9.5\lib\net40\MassTransit.Log4NetIntegration.dll</HintPath>
+      <HintPath>..\packages\MassTransit.Log4Net.3.0.10-beta\lib\net45\MassTransit.Log4NetIntegration.dll</HintPath>
     </Reference>
-    <Reference Include="MassTransit.Transports.RabbitMq">
-      <HintPath>..\packages\MassTransit.RabbitMQ.2.9.5\lib\net40\MassTransit.Transports.RabbitMq.dll</HintPath>
+    <Reference Include="MassTransit.RabbitMqTransport">
+      <HintPath>..\packages\MassTransit.RabbitMQ.3.0.10-beta\lib\net45\MassTransit.RabbitMqTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="NewId">
+      <HintPath>..\packages\NewId.2.1.3\lib\net45\NewId.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RabbitMQ.Client">
-      <HintPath>..\packages\RabbitMQ.Client.3.2.1\lib\net30\RabbitMQ.Client.dll</HintPath>
+      <HintPath>..\packages\RabbitMQ.Client.3.5.3\lib\net40\RabbitMQ.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

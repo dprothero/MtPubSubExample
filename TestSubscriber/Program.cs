@@ -1,6 +1,6 @@
-﻿using Configuration;
+﻿using System;
+using Configuration;
 using MassTransit;
-using System;
 
 namespace TestSubscriber
 {
@@ -8,17 +8,10 @@ namespace TestSubscriber
   {
     static void Main(string[] args)
     {
-      var bus = BusInitializer.CreateBus("TestSubscriber", x =>
-      {
-        x.Subscribe(subs =>
-        {
-          subs.Consumer<SomethingHappenedConsumer>().Permanent();
-        });
-      });
-
+      var bus = BusInitializer.CreateBus("TestSubscriber", e => e.Consumer<SomethingHappenedConsumer>());
+      var busHandle = bus.Start();
       Console.ReadKey();
-
-      bus.Dispose();
+      busHandle.Stop().Wait();
     }
   }
 }

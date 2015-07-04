@@ -1,9 +1,9 @@
-﻿using Contracts;
-using System;
+﻿using System;
+using Contracts;
 
 namespace TestPublisher
 {
-  class SomethingHappenedMessage : SomethingHappened
+  public class SomethingHappenedMessage : SomethingHappened
   {
     public string What { get; set; }
     public DateTime When { get; set; }

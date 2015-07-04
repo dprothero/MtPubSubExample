@@ -1,6 +1,6 @@
-﻿using Configuration;
+﻿using System;
+using Configuration;
 using Contracts;
-using System;
 
 namespace TestPublisher
 {
@@ -8,8 +8,9 @@ namespace TestPublisher
   {
     static void Main(string[] args)
     {
-      var bus = BusInitializer.CreateBus("TestPublisher", x => { });
-      string text = "";
+      var bus = BusInitializer.CreateBus();
+      var busHandle = bus.Start();
+      var text = "";
 
       while (text != "quit")
       {
@@ -17,10 +18,10 @@ namespace TestPublisher
         text = Console.ReadLine();
 
         var message = new SomethingHappenedMessage() { What = text, When = DateTime.Now };
-        bus.Publish<SomethingHappened>(message, x => { x.SetDeliveryMode(MassTransit.DeliveryMode.Persistent); });
+        bus.Publish<SomethingHappened>(message);
       }
 
-      bus.Dispose();
+      busHandle.Stop().Wait();
     }
   }
 }

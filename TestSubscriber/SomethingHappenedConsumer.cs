@@ -1,17 +1,19 @@
-﻿using Contracts;
+﻿using System;
+using System.Threading.Tasks;
+using Contracts;
 using MassTransit;
-using System;
 
 namespace TestSubscriber
 {
-  class SomethingHappenedConsumer : Consumes<SomethingHappened>.Context
+  class SomethingHappenedConsumer : IConsumer<SomethingHappened>
   {
-    public void Consume(IConsumeContext<SomethingHappened> message)
+    public Task Consume(ConsumeContext<SomethingHappened> context)
     {
-      Console.Write("TXT: " + message.Message.What);
-      Console.Write("  SENT: " + message.Message.When.ToString());
-      Console.Write("  PROCESSED: " + DateTime.Now.ToString());
-      Console.WriteLine(" (" + System.Threading.Thread.CurrentThread.ManagedThreadId.ToString() + ")");
+      Console.Write("TXT: " + context.Message.What);
+      Console.Write("  SENT: " + context.Message.When);
+      Console.Write("  PROCESSED: " + DateTime.Now);
+      Console.WriteLine(" (" + System.Threading.Thread.CurrentThread.ManagedThreadId + ")");
+      return Task.FromResult(0);
     }
   }
 }

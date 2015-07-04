@@ -1,20 +1,26 @@
-﻿using MassTransit;
-using MassTransit.BusConfigurators;
+﻿using System;
+using MassTransit;
 using MassTransit.Log4NetIntegration.Logging;
-using System;
 
 namespace Configuration
 {
   public class BusInitializer
   {
-    public static IServiceBus CreateBus(string queueName, Action<ServiceBusConfigurator> moreInitialization)
+    public static IBusControl CreateBus(string queueName = null, Action<IReceiveEndpointConfigurator> endpointInitialization = null)
     {
       Log4NetLogger.Use();
-      var bus = ServiceBusFactory.New(x =>
+      var hostAddress = new Uri("rabbitmq://localhost/");
+      var bus = Bus.Factory.CreateUsingRabbitMq(x =>
       {
-        x.UseRabbitMq();
-        x.ReceiveFrom("rabbitmq://localhost/MtPubSubExample_" + queueName);
-        moreInitialization(x);
+        var host = x.Host(hostAddress, h => {});
+
+        if (!string.IsNullOrEmpty(queueName))
+        {
+          x.ReceiveEndpoint(host, "MtPubSubExample_" + queueName, e =>
+          {
+            if (endpointInitialization != null) endpointInitialization(e);
+          });
+        }
       });
 
       return bus;
