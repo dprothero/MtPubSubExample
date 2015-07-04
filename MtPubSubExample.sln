@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{180BFA82-49FC-43E6-9FA1-EB99DF42ED9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{2BF2F7E3-0A1F-429E-85AA-7E2A63609BFC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPublisher", "TestPublisher\TestPublisher.csproj", "{627AFC13-0DBD-40D3-9289-479A2FA914F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSubscriber", "TestSubscriber\TestSubscriber.csproj", "{D6877D9A-6AC5-464C-8F8A-E5EC19303E97}"
@@ -28,10 +26,6 @@ Global
 		{180BFA82-49FC-43E6-9FA1-EB99DF42ED9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{180BFA82-49FC-43E6-9FA1-EB99DF42ED9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{180BFA82-49FC-43E6-9FA1-EB99DF42ED9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2BF2F7E3-0A1F-429E-85AA-7E2A63609BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BF2F7E3-0A1F-429E-85AA-7E2A63609BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BF2F7E3-0A1F-429E-85AA-7E2A63609BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BF2F7E3-0A1F-429E-85AA-7E2A63609BFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{627AFC13-0DBD-40D3-9289-479A2FA914F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{627AFC13-0DBD-40D3-9289-479A2FA914F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{627AFC13-0DBD-40D3-9289-479A2FA914F7}.Release|Any CPU.ActiveCfg = Release|Any CPU

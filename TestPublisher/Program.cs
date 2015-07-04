@@ -1,6 +1,7 @@
 ﻿using System;
-using Configuration;
 using Contracts;
+using MassTransit;
+using MassTransit.Log4NetIntegration.Logging;
 
 namespace TestPublisher
 {
@@ -8,7 +9,9 @@ namespace TestPublisher
   {
     static void Main(string[] args)
     {
-      var bus = BusInitializer.CreateBus();
+      Log4NetLogger.Use();
+      var bus = Bus.Factory.CreateUsingRabbitMq(x => 
+        x.Host(new Uri("rabbitmq://localhost/"), h => { }));
       var busHandle = bus.Start();
       var text = "";
 
@@ -17,7 +20,10 @@ namespace TestPublisher
         Console.Write("Enter a message: ");
         text = Console.ReadLine();
 
-        var message = new SomethingHappenedMessage() { What = text, When = DateTime.Now };
+        var message = new SomethingHappenedMessage()
+        {
+          What = text, When = DateTime.Now
+        };
         bus.Publish<SomethingHappened>(message);
       }
 
